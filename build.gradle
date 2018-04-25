@@ -5,9 +5,10 @@ def applicationId = "com.marianhello"
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.1.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -17,15 +18,14 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com'
-        }
+        google()
     }
 }
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 27
+    targetSdkVersion 27
+    buildToolsVersion "27.0.3"
     publishNonDefault true
 
     defaultConfig {
@@ -36,15 +36,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    productFlavors {
-        preoreo {
-            targetSdkVersion 23
-        }
-        oreo {
-            versionNameSuffix 'oreo'
-            targetSdkVersion 26
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false
@@ -52,8 +43,8 @@ android {
         }
     }
      compileOptions {
-         sourceCompatibility JavaVersion.VERSION_1_6
-         targetCompatibility JavaVersion.VERSION_1_6
+         sourceCompatibility JavaVersion.VERSION_1_7
+         targetCompatibility JavaVersion.VERSION_1_7
      }
 
     testOptions {
@@ -64,14 +55,14 @@ android {
     }
 }
 dependencies {
-    androidTestCompile 'com.android.support:support-annotations:23.1.1'
-    androidTestCompile 'com.android.support.test:runner:0.5'
-    androidTestCompile 'com.android.support.test:rules:0.5'
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.json:json:20140107'
-    compile 'com.google.android.gms:play-services-location:11+'
-    oreoCompile 'com.android.support:support-compat:26+'
+    androidTestImplementation 'com.android.support:support-annotations:27.1.1'
+    androidTestmplementation 'com.android.support.test:runner:0.5'
+    androidTestmplementation 'com.android.support.test:rules:0.5'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplentation 'junit:junit:4.12'
+    testImplentation 'org.json:json:20140107'
+    implementation 'com.google.android.gms:play-services-location:11+'
+    testImplentation 'com.android.support:support-compat:27.1.1'
 }
 
 apply from: './logtofile.gradle'
