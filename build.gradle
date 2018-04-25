@@ -55,8 +55,8 @@ android {
 }
 dependencies {
     androidTestImplementation 'com.android.support:support-annotations:27.1.1'
-    androidTestmplementation 'com.android.support.test:runner:0.5'
-    androidTestmplementation 'com.android.support.test:rules:0.5'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test:rules:0.5'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplentation 'junit:junit:4.12'
     testImplentation 'org.json:json:20140107'
