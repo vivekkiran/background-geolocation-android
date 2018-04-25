@@ -72,19 +72,7 @@ public class BackgroundGeolocationFacade {
     private org.slf4j.Logger logger;
 
     Messenger mMessenger;
-public BackgroundGeolocationFacade(Context context){
-            mContext = context;
 
-        UncaughtExceptionLogger.register(context);
-
-        logger = LoggerManager.getLogger(BackgroundGeolocationFacade.class);
-        LoggerManager.enableDBLogging();
-
-        logger.info("Initializing plugin");
-
-        mMainhandler = new Handler(context.getMainLooper());
-        NotificationHelper.registerAllChannels(getContext());
-}
     public BackgroundGeolocationFacade(Context context, PluginDelegate delegate) {
         mContext = context;
         mDelegate = delegate;
